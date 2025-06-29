@@ -927,6 +927,10 @@ hterm.Screen.prototype.expandSelectionWithWordBreakMatches_ =
     return;
   }
 
+  if (selection.rangeCount == 0) {
+    return;
+  }
+
   const range = selection.getRangeAt(0);
   if (!range || range.toString().match(/\s/)) {
     return;
